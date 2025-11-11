@@ -2,12 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using TMPro;
 
 public class DoorTrigger2D : MonoBehaviour
 {
     [Header("References")]
     public DoorController2D door;
-    public Text promptTextUI;
+    public TMP_Text promptTextUI;
     public GameObject promptRoot;
 
     [Header("Prompt Settings")]
@@ -35,7 +36,6 @@ public class DoorTrigger2D : MonoBehaviour
 
         if (door && !door.IsOpen && Input.GetKeyDown(key))
         {
-            Debug.Log("K pressed - opening door");
             door.TryOpen();
             SetPromptVisible(false);
             playerInRange = false;
@@ -52,7 +52,6 @@ public class DoorTrigger2D : MonoBehaviour
 
         if (IsPlayer(other))
         {
-            Debug.Log("Player entered InteractZone");
             playerInRange = true;
             if (promptTextUI) promptTextUI.text = prompt;
             SetPromptVisible(true);
