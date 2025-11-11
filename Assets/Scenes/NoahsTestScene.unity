@@ -942,7 +942,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 689287333}
-  m_Layer: 3
+  - component: {fileID: 689287334}
+  - component: {fileID: 689287335}
+  m_Layer: 0
   m_Name: InteractZone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -964,6 +966,68 @@ Transform:
   m_Children: []
   m_Father: {fileID: 996554077}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &689287334
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689287332}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 03d0d1befdb793a4ab1ab091f94c1fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  door: {fileID: 996554078}
+  promptTextUI: {fileID: 0}
+  promptRoot: {fileID: 0}
+  prompt: Press K to open the door
+  key: 107
+--- !u!61 &689287335
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 689287332}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.006207347, y: 0.8932394}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.9559395, y: 2.7864773}
+  m_EdgeRadius: 0
 --- !u!1001 &710982534
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1516,6 +1580,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e5cddffff92138f42810c1e533526f25, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  openDirection: 0
+  openDistance: 2.5
+  openDuration: 0.4
+  ease:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    - serializedVersion: 3
+      time: 1
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  solidCollider: {fileID: 0}
 --- !u!1001 &1058270559
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2645,6 +2737,22 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 313766752744683116, guid: b66d3192087dfae4fbac66ffd5b4f470, type: 3}
+      propertyPath: m_Size.x
+      value: 1.0000004
+      objectReference: {fileID: 0}
+    - target: {fileID: 313766752744683116, guid: b66d3192087dfae4fbac66ffd5b4f470, type: 3}
+      propertyPath: m_Size.y
+      value: 1.0000006
+      objectReference: {fileID: 0}
+    - target: {fileID: 313766752744683116, guid: b66d3192087dfae4fbac66ffd5b4f470, type: 3}
+      propertyPath: m_Offset.x
+      value: 0.0062073916
+      objectReference: {fileID: 0}
+    - target: {fileID: 313766752744683116, guid: b66d3192087dfae4fbac66ffd5b4f470, type: 3}
+      propertyPath: m_Offset.y
+      value: 0.000000059604645
+      objectReference: {fileID: 0}
     - target: {fileID: 1942846402239628424, guid: b66d3192087dfae4fbac66ffd5b4f470, type: 3}
       propertyPath: m_Name
       value: Door
@@ -3679,6 +3787,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4140416996994641435, guid: 66e3b952d94765f438b971f54cc89f45, type: 3}
       propertyPath: m_Name
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 4140416996994641435, guid: 66e3b952d94765f438b971f54cc89f45, type: 3}
+      propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 5036050660341320328, guid: 66e3b952d94765f438b971f54cc89f45, type: 3}
