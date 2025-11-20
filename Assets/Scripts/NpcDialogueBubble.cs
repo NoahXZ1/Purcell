@@ -14,10 +14,15 @@ public class NpcDialogueBubble : MonoBehaviour
     public string[] lines;           //all dialogue lines.
     public KeyCode interactKey = KeyCode.P;
 
+    [Header("Quest")]
+    [TextArea]
+    public string nextQuestText;     //mission tips text to set after all lines are finished
+
     private bool playerInRange;
     private bool dialogueActive;
     private int currentIndex = -1;
 
+    private bool questUpdated;       //to make sure we only update quest once
     private void Start()
     {
         if (bubbleRoot != null)
@@ -70,18 +75,30 @@ public class NpcDialogueBubble : MonoBehaviour
         }
         else
         {
-            EndDialogue();
+            EndDialogue(true);
         }
     }
 
-    private void EndDialogue()
+    private void EndDialogue(bool completedAllLines = false)
     {
         //disable the dialog when the conversation ends. 
         dialogueActive = false;
         currentIndex = -1;
 
         if (bubbleRoot != null)
+        {
             bubbleRoot.SetActive(false);
+        }
+
+        //only update quest if player really finished all lines (not just walked away)
+        if (completedAllLines && !questUpdated && QuestUIManager.Instance != null)
+        {
+            if (!string.IsNullOrEmpty(nextQuestText))
+            {
+                QuestUIManager.Instance.SetQuest(nextQuestText);
+                questUpdated = true;
+            }
+        }
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -102,6 +119,6 @@ public class NpcDialogueBubble : MonoBehaviour
         
         //Disable dialog bubble when player walk away. 
         playerInRange = false;
-        EndDialogue();
+        EndDialogue(false);
     }
 }
