@@ -2637,6 +2637,130 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4626807535387519559, guid: b66d3192087dfae4fbac66ffd5b4f470, type: 3}
   m_PrefabInstance: {fileID: 403872827}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &246666633
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 374185678237159095, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: lines.Array.size
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 374185678237159095, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: lines.Array.data[0]
+      value: 'Hana: Has the Sakura bloomed again? I can smell my love''s scent on
+        the wind.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 374185678237159095, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: lines.Array.data[1]
+      value: 'Hana: Year after year, even the memory of their fragrance seems to
+        lose its color.......In the end, is time too cruel, or am I too stubborn?'
+      objectReference: {fileID: 0}
+    - target: {fileID: 374185678237159095, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: lines.Array.data[2]
+      value: "Hana: The weight of grief held me here. I can\u2019t move on."
+      objectReference: {fileID: 0}
+    - target: {fileID: 374185678237159095, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: lines.Array.data[3]
+      value: "Hana: My dearest Matt and I promised beneath a Sakura Tree that every
+        spring he would bring me a spray of the first blossoms\u2026. just like when
+        we first met."
+      objectReference: {fileID: 0}
+    - target: {fileID: 374185678237159095, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: lines.Array.data[4]
+      value: 'Hana: You see, the seasons keep their word. They never fail to bring
+        spring back. But the spring within my memories......has never returned.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 374185678237159095, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: lines.Array.data[5]
+      value: 'Hana: Perhaps....... I have been clinging to that wish too tightly.
+        So......could you bring me a spray of Sakura? Not for him. But to properly
+        bid farewell the spring in which we met.'
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706802075633393086, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 789.7
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706802075633393086, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 406.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706802075633393086, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 5.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 5706802075633393086, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 317.3
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773101596930686570, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_Name
+      value: Hana
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154246938472753090, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 9700b8f1c047068488cbce27359327e3, type: 3}
+    - target: {fileID: 7154246938472753090, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_Color.b
+      value: 0.80053407
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154246938472753090, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7154246938472753090, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_Color.r
+      value: 0.9716981
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 8.75
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 9.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
 --- !u!4 &252611826 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 4626807535387519559, guid: b66d3192087dfae4fbac66ffd5b4f470, type: 3}
@@ -4421,6 +4545,63 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 4626807535387519559, guid: b66d3192087dfae4fbac66ffd5b4f470, type: 3}
   m_PrefabInstance: {fileID: 1752717562}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &438410505
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4720128319140960731, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.2913805
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720128319140960731, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -4.221433
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720128319140960731, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -0.12927195
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720128319140960731, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720128319140960731, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720128319140960731, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720128319140960731, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720128319140960731, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720128319140960731, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4720128319140960731, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7351852346662351189, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
+      propertyPath: m_Name
+      value: Music Player
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: efd4096f1db5b44eda28d2952e8ba1e1, type: 3}
 --- !u!1001 &448711710
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -8406,6 +8587,10 @@ PrefabInstance:
     - target: {fileID: 5773101596930686570, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
       propertyPath: m_Name
       value: npc_Tuco_Hana
+      objectReference: {fileID: 0}
+    - target: {fileID: 5773101596930686570, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7506702721041116177, guid: cb2a8c88faef34a4aaf4b746b422abb8, type: 3}
       propertyPath: m_LocalPosition.x
@@ -21173,3 +21358,5 @@ SceneRoots:
   - {fileID: 1371475420}
   - {fileID: 638026821}
   - {fileID: 700255322}
+  - {fileID: 246666633}
+  - {fileID: 438410505}
