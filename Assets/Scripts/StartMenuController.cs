@@ -3,14 +3,40 @@ using UnityEngine.SceneManagement;
 
 public class StartMenuController : MonoBehaviour
 {
+    [SerializeField] private GameObject MainMenuPanel;
+    [SerializeField] private GameObject TutorialPanel;
+    
     public void StartGame()
     {
-        SceneManager.LoadScene("Ken'sTestScene 2");
+        SceneManager.LoadScene("TestScene3");
     }
 
     public void OpenSettings()
     {
-        // œ‘ æ…Ë÷√ UI
+        //enter the tutorial panel
+        if (MainMenuPanel != null) 
+        {
+            MainMenuPanel.SetActive(false);
+        }
+
+        if (TutorialPanel != null) 
+        {
+            TutorialPanel.SetActive(true);
+        }
+    }
+
+     public void BackToMainMenu()
+    {
+        //back to start menu from tutorial menu
+        if (TutorialPanel != null) 
+        {
+            TutorialPanel.SetActive(false);
+        }
+
+        if (MainMenuPanel != null) 
+        {
+            MainMenuPanel.SetActive(true);
+        }
     }
 
     public void QuitGame()
