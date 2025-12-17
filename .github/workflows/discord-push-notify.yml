@@ -20,7 +20,7 @@ jobs:
           COMMIT_URL: ${{ github.event.head_commit.url }}
         run: |
           payload=$(jq -n \
-            --arg content "yo~there's an update:📦 Repository: **$REPO**\n🔀 Branch: \`$BRANCH\`\n👤 Our rising star in Gamedev⭐: **$ACTOR**\n📝 Message: $COMMIT_MESSAGE\n🔗 $COMMIT_URL" \
+            --arg content "👊TIGHT TIGHT TIGHT! New Branch Cooked:📦 Repository: **$REPO**\n🔀 Branch: \`$BRANCH\`\n👤 The Cook: **$ACTOR**\n📝 Message: $COMMIT_MESSAGE\n🔗 $COMMIT_URL" \
             '{content: $content}')
           curl -X POST -H "Content-Type: application/json" \
             -d "$payload" \
