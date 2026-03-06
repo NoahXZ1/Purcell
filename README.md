@@ -8,7 +8,7 @@ Install GitHub Desktop: https://desktop.github.com/
 **2. Clone the project from GitHub to your local end**
 
 Open GitHub Desktop -> Click "File" -> "Clone repository"
-Find our project repo using **HTTPS** link: https://github.com/NoahXZ1/MI839_Group_Project.git
+Find our project repo using **HTTPS** link: https://github.com/NoahXZ1/Purcell.git
 Choose a local folder where you want the project.
 Click "Clone".
 
