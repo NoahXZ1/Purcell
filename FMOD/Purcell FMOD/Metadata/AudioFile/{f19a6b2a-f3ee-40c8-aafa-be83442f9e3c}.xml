@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<objects serializationModel="Studio.02.03.00">
+	<object class="AudioFile" id="{f19a6b2a-f3ee-40c8-aafa-be83442f9e3c}">
+		<property name="assetPath">
+			<value>PersonWalking4-2.wav</value>
+		</property>
+		<property name="frequencyInKHz">
+			<value>44.0999985</value>
+		</property>
+		<property name="channelCount">
+			<value>2</value>
+		</property>
+		<property name="length">
+			<value>0.5297732426303855</value>
+		</property>
+		<relationship name="masterAssetFolder">
+			<destination>{2417dfd0-41a5-4ead-8947-5357c6576aba}</destination>
+		</relationship>
+	</object>
+</objects>
