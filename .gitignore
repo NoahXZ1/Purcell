@@ -6,6 +6,12 @@
 [Uu]serSettings/
 [Bb]uild*/
 
+# Keep FMOD built banks in repo
+!FMOD/
+!FMOD/Purcell FMOD/
+!FMOD/Purcell FMOD/Build/
+!FMOD/Purcell FMOD/Build/**
+
 # Never ignore DLLs in the FMOD subfolder.
 !/[Aa]ssets/Plugins/FMOD/**/lib/*
 
