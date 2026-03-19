@@ -1,2 +1,6 @@
 Assets/Plugins/FMOD/**/*.bundle -text
 Assets/Plugins/FMOD/**/Info.plist text eol=lf
+
+Assets/Plugins/FMOD/**/*.dll -text
+Assets/Plugins/FMOD/**/*.dylib -text
+Assets/Plugins/FMOD/**/*.so -text
