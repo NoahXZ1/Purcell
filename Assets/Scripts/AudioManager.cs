@@ -1,28 +1,35 @@
-using System.Collections;
-using System.Collections.Generic;
+using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
 
-
 public class AudioManager : MonoBehaviour
 {
+    [SerializeField] private EventReference mainTheme;
 
-    [SerializeField] EventReference mainTheme;
+    private EventInstance mainThemeInstance;
 
-    // Start is called before the first frame update
     private void Start()
     {
-        PlaymainTheme(); 
+        PlayMainTheme();
     }
 
-    public void PlaymainTheme()
+    public void PlayMainTheme()
     {
-        RuntimeManager.PlayOneShot(mainTheme);
+        mainThemeInstance = RuntimeManager.CreateInstance(mainTheme);
+        mainThemeInstance.start();
     }
 
-    // Update is called once per frame
-    void Update()
+    private void OnDestroy()
     {
-        
+        StopMainTheme();
+    }
+
+    public void StopMainTheme()
+    {
+        if (mainThemeInstance.isValid())
+        {
+            mainThemeInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            mainThemeInstance.release();
+        }
     }
 }
