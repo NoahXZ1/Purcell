@@ -1,35 +1,85 @@
 using FMOD.Studio;
 using FMODUnity;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class AudioManager : MonoBehaviour
 {
+    public static AudioManager Instance;
+
+    [Header("Music Events")]
     [SerializeField] private EventReference mainTheme;
 
-    private EventInstance mainThemeInstance;
+    private EventInstance currentMusic;
+
+    private void Awake()
+    {
+        // Singleton (keeps one AudioManager across scenes)
+        if (Instance != null)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
+        Instance = this;
+        DontDestroyOnLoad(gameObject);
+    }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
 
     private void Start()
     {
-        PlayMainTheme();
+        PlayMusicForScene(SceneManager.GetActiveScene().name);
     }
 
-    public void PlayMainTheme()
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        mainThemeInstance = RuntimeManager.CreateInstance(mainTheme);
-        mainThemeInstance.start();
+        PlayMusicForScene(scene.name);
     }
 
-    private void OnDestroy()
+    private void PlayMusicForScene(string sceneName)
     {
-        StopMainTheme();
-    }
-
-    public void StopMainTheme()
-    {
-        if (mainThemeInstance.isValid())
+        // Stop previous music (fade out)
+        if (currentMusic.isValid())
         {
-            mainThemeInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-            mainThemeInstance.release();
+            currentMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            currentMusic.release();
+        }
+
+        // Choose music based on scene name
+        EventReference selectedMusic = default;
+
+        if (sceneName == "FaithAudioScene")
+        {
+            selectedMusic = mainTheme;
+        }
+      
+        else
+        {
+            Debug.LogWarning("No music assigned for scene: " + sceneName);
+            return;
+        }
+
+        // Play new music
+        currentMusic = RuntimeManager.CreateInstance(selectedMusic);
+        currentMusic.start();
+    }
+
+    public void StopMusic()
+    {
+        if (currentMusic.isValid())
+        {
+            currentMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            currentMusic.release();
         }
     }
 }
+
