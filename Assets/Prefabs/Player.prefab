@@ -313,6 +313,7 @@ GameObject:
   - component: {fileID: 3017403045097942525}
   - component: {fileID: 8813031719845133599}
   - component: {fileID: 709081273692597291}
+  - component: {fileID: 3527619266251443905}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -411,3 +412,19 @@ MonoBehaviour:
   catVisionMask:
     serializedVersion: 2
     m_Bits: 0
+--- !u!114 &3527619266251443905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8459177459724841691}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1ac56a4ad70e2a04db88ef5867817112, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactKey: 101
+  promptRoot: {fileID: 0}
+  promptText: {fileID: 0}
+  inventoryUI: {fileID: 0}
