@@ -6,9 +6,9 @@ public class StartMenuController : MonoBehaviour
     [SerializeField] private GameObject MainMenuPanel;
     [SerializeField] private GameObject TutorialPanel;
     
-    public void StartGame()
+    public void StartGame(string scene)
     {
-        SceneManager.LoadScene("TestScene3");
+        SceneManager.LoadScene(scene);
     }
 
     public void OpenSettings()
