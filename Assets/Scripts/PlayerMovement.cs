@@ -67,8 +67,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        //Switch between Cat and Human(press E)
-        if (Input.GetKeyDown(KeyCode.E))
+        //Switch between Cat and Human(press F)
+        if (Input.GetKeyDown(KeyCode.F))
         {
             ToggleForm();
         }
