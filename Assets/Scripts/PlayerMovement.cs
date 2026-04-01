@@ -96,7 +96,14 @@ public class PlayerMovement : MonoBehaviour
         float accel = (Mathf.Abs(target) > 0.01f) ? acceleration : deceleration;
         if (!isGrounded) accel *= airControlMultiplier;
 
-        rb.AddForce(new Vector2(accel * speedDiff, 0f) * Time.fixedDeltaTime, ForceMode2D.Impulse);
+        // Clamp so the impulse never overshoots the target velocity (prevents numerical instability
+        // when accel * fixedDeltaTime > 2, which causes velocity to oscillate and diverge).
+        float velocityChange = Mathf.Clamp(
+            accel * speedDiff * Time.fixedDeltaTime,
+            -Mathf.Abs(speedDiff),
+            Mathf.Abs(speedDiff)
+        );
+        rb.AddForce(new Vector2(velocityChange, 0f), ForceMode2D.Impulse);
     }
 
     void Jump()
