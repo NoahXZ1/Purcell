@@ -53,7 +53,7 @@ public class PlayerMovement : MonoBehaviour
     Rigidbody2D rb;
     bool isGrounded;
     bool canJump;
-    float inputX;
+    float inputX;  //the velocity in x-aixs direction
 
     //External hooks: can be subscribed to in the future when doing UI/VFX/sound effects/view switching
     public event Action<PlayerForm> OnFormChanged;
@@ -87,6 +87,14 @@ public class PlayerMovement : MonoBehaviour
         {
             Jump();
         }
+
+        if(rb.velocity.x <-0.1f){  //when velocity is <0, turning player to left
+            transform.localScale = new Vector3(-1f,1f,1f);
+        }
+        else if(rb.velocity.x > 0.1f){   //when velocity is >0 turning player to right. 
+            transform.localScale = new Vector3(1f,1f,1f);
+        }
+        
     }
 
     void FixedUpdate()
