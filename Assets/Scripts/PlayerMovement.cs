@@ -51,9 +51,9 @@ public class PlayerMovement : MonoBehaviour
 
     // ---------- Internals ----------
     Rigidbody2D rb;
-    bool isGrounded;
+    [HideInInspector] public bool isGrounded;
     bool canJump;
-    float inputX;  //the velocity in x-aixs direction
+    [HideInInspector] public float inputX;  //the velocity in x-aixs direction
 
     //External hooks: can be subscribed to in the future when doing UI/VFX/sound effects/view switching
     public event Action<PlayerForm> OnFormChanged;
