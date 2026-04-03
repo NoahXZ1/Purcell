@@ -24,7 +24,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             SetPrompt(true, current.PromptText);
             if (Input.GetKeyDown(interactKey))
-                current.Interact(this);
+                current.Interact(this);   //Interact() is called in here, so all items related to interact will be listened and executed here. 
         }
         else
         {
