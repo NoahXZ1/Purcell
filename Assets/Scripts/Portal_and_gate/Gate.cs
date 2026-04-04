@@ -35,7 +35,7 @@ public class Gate : MonoBehaviour
         if (_playerMovement != movement)
         {
             // Safety: unsubscribe from any previous player reference.
-            if (_playerMovement != null)   //clear the player form recorded in last time's colliding
+            if (_playerMovement != null)
                 _playerMovement.OnFormChanged -= OnPlayerFormChanged;
 
             _playerMovement = movement;
@@ -49,7 +49,14 @@ public class Gate : MonoBehaviour
             }
         }
 
-        UpdateGateCollider(movement.currentForm);  //to determine whether the solid collider box is enabled or not. 
+        UpdateGateCollider(movement);
+
+        // Human is now overlapping the gate — lock form changing so the player
+        // cannot switch to Cat (which would get stuck inside the solid collider).
+        if (movement.currentForm == PlayerMovement.PlayerForm.Human)
+        {
+            movement.canChangeForm = false;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D other)
@@ -65,29 +72,29 @@ public class Gate : MonoBehaviour
         if (_collidersInZone <= 0)
         {
             _collidersInZone = 0;
+
+            // Player has fully left — restore form switching and the solid wall.
+            movement.canChangeForm = true;
             _playerMovement.OnFormChanged -= OnPlayerFormChanged;
             _playerMovement = null;
 
-            // Player has fully left — restore the solid wall.
             if (solidCollider) solidCollider.enabled = true;
         }
     }
 
-    // is always updated ahead of the collider swap.
-
-    //when Playermovement send a new event (like change the form), this method detects and call the updateGateCollider()
-    //This is actually a listener of OnFormChanged
-    private void OnPlayerFormChanged(PlayerMovement.PlayerForm newForm) 
+    // Listener for OnFormChanged — signature must match Action<PlayerForm>.
+    private void OnPlayerFormChanged(PlayerMovement.PlayerForm form)
     {
-        UpdateGateCollider(newForm);
+        UpdateGateCollider(_playerMovement);
     }
 
-    private void UpdateGateCollider(PlayerMovement.PlayerForm form)
+    // Controls only the solid collider; canChangeForm is managed by Enter/Exit.
+    private void UpdateGateCollider(PlayerMovement movement)
     {
-        if (solidCollider == null) return;  
+        if (solidCollider == null || movement == null) return;
         // Human → disable wall (can walk through).
         // Cat   → enable wall (physically blocked).
-        solidCollider.enabled = (form == PlayerMovement.PlayerForm.Cat);
+        solidCollider.enabled = (movement.currentForm == PlayerMovement.PlayerForm.Cat);
     }
 
     private void ShowNotification()  //display the prompt text
@@ -109,6 +116,7 @@ public class Gate : MonoBehaviour
     {
         if (_playerMovement != null)
         {
+            _playerMovement.canChangeForm = true;  // always restore on gate disable
             _playerMovement.OnFormChanged -= OnPlayerFormChanged;
             _playerMovement = null;
         }

@@ -58,6 +58,9 @@ public class PlayerMovement : MonoBehaviour
     //External hooks: can be subscribed to in the future when doing UI/VFX/sound effects/view switching
     public event Action<PlayerForm> OnFormChanged;
 
+    //To control whether the form can be changed or not (prepared for later functions like spirte gate)
+    public bool canChangeForm = true; 
+
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -68,7 +71,7 @@ public class PlayerMovement : MonoBehaviour
     void Update()
     {
         //Switch between Cat and Human(press F)
-        if (Input.GetKeyDown(KeyCode.F))
+        if (Input.GetKeyDown(KeyCode.F) && canChangeForm)
         {
             ToggleForm();
         }

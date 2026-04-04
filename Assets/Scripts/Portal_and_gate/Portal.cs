@@ -9,7 +9,7 @@ public class Portal : MonoBehaviour, IInteractable
     [Tooltip("The other Portal object this one connects to.")]
     [SerializeField] private Portal linkedPortal;  //set the linked portal in Inspector.
 
-    public string PromptText => "Press E to enter in spirit form";  //prompts when player touch the portal in human form. 
+    public string PromptText => "Press E to enter the portal";  //prompts when player touch the portal in human form. 
 
     // Cached reference to the player currently in range (null when nobody is near).
     private PlayerInteraction _playerInteraction;
