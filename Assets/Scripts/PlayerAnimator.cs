@@ -19,10 +19,15 @@ public class PlayerAnimator : MonoBehaviour
     void Update()
     {
         // Only drive the active form's animator
-        if (movement.currentForm == PlayerMovement.PlayerForm.Cat)
+        if (movement.currentForm == PlayerMovement.PlayerForm.Cat)  //determine cat form anim
         {
             bool isWalking = movement.isGrounded && movement.inputX != 0f;
             catAnim.SetBool("isWalking", isWalking);
+        }
+        else if(movement.currentForm == PlayerMovement.PlayerForm.Human)  //determine human form anim
+        {
+            bool isWalkingH = movement.isGrounded && movement.inputX != 0f;
+            humanAnim.SetBool("isWalkingH", isWalkingH);
         }
         // Human animations not implemented yet — will be added later
     }
