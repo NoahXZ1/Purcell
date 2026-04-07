@@ -12,6 +12,7 @@ public class AudioManager : MonoBehaviour
 
     private EventInstance currentMusic;
 
+
     private void Awake()
     {
         // Singleton (keeps one AudioManager across scenes)
@@ -81,5 +82,26 @@ public class AudioManager : MonoBehaviour
             currentMusic.release();
         }
     }
+
+
+    //Human Footsteps
+
+    [SerializeField] EventReference humanFootsteps;
+    [SerializeField] float rate;
+    [SerializeField] GameObject player;
+
+    float time;
+
+    public void PlayHumanFootsteps()
+    {
+        RuntimeManager.PlayOneShotAttached(humanFootsteps, player);
+    }
+
+    private void Update()
+    {
+        time += Time.deltaTime;
+    }
+
+
 }
 
