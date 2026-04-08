@@ -6,7 +6,6 @@ using UnityEngine.SceneManagement;
 public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
-    PlayerMovement movement;
 
     [Header("Music Events")]
     [SerializeField] private EventReference mainTheme;
@@ -22,8 +21,6 @@ public class AudioManager : MonoBehaviour
             Destroy(gameObject);
             return;
         }
-
-        movement = GetComponent<PlayerMovement>();
 
         Instance = this;
         DontDestroyOnLoad(gameObject);
@@ -65,7 +62,7 @@ public class AudioManager : MonoBehaviour
         {
             selectedMusic = mainTheme;
         }
-      
+
         else
         {
             Debug.LogWarning("No music assigned for scene: " + sceneName);
@@ -75,13 +72,6 @@ public class AudioManager : MonoBehaviour
         // Play new music
         currentMusic = RuntimeManager.CreateInstance(selectedMusic);
         currentMusic.start();
-
-    }
-
-    public void PlayWalkingMusic(){
-        if(movement.inputX != 0f && movement.isGrounded){
-            //Play walking music
-        }
     }
 
     public void StopMusic()
@@ -91,13 +81,6 @@ public class AudioManager : MonoBehaviour
             currentMusic.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
             currentMusic.release();
         }
-
-    }
-
-    public void StopPlayingWalkingMusic(){
-        if(movement.inputX == 0f || movement.isGrounded != true){
-            //Stop playing walking music
-        }
     }
 
 
@@ -106,7 +89,6 @@ public class AudioManager : MonoBehaviour
     [SerializeField] EventReference humanFootsteps;
     [SerializeField] float rate;
     [SerializeField] GameObject player;
-
 
     float time;
 
@@ -118,12 +100,10 @@ public class AudioManager : MonoBehaviour
     private void Update()
     {
         time += Time.deltaTime;
-
-        //playing walking music
-        PlayWalkingMusic();
-        StopPlayingWalkingMusic();
     }
 
 
 }
+
+
 
