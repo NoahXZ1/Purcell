@@ -9,8 +9,7 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProductVersion>10.0.20506</ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <RootNamespace>
-    </RootNamespace>
+    <RootNamespace></RootNamespace>
     <ProjectGuid>{D0A45976-7A16-3439-2D6E-A9B5B710A5B6}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -480,10 +479,6 @@
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">
       <HintPath>Library\PackageCache\com.unity.visualscripting@1.9.4\Runtime\VisualScripting.Flow\Dependencies\NCalc\Unity.VisualScripting.Antlr3.Runtime.dll</HintPath>
-      <Private>False</Private>
-    </Reference>
-    <Reference Include="UnityEditor.iOS.Extensions.Xcode">
-      <HintPath>C:\Program Files\Unity\Hub\Editor\2022.3.62f1\Editor\Data\PlaybackEngines\MacStandaloneSupport\UnityEditor.iOS.Extensions.Xcode.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="netstandard">
@@ -1149,19 +1144,19 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="FMODUnityEditor.csproj">
-      <Project>{1136CF42-4DC9-BB8C-5C65-8050636911A8}</Project>
+      <Project>{AC05543B-CB14-E401-A0D6-AE9CF2899471}</Project>
       <Name>FMODUnityEditor</Name>
     </ProjectReference>
     <ProjectReference Include="FMODUnityResonance.csproj">
-      <Project>{D2EC0052-7C49-B8D2-74B8-87ECA7C0763C}</Project>
+      <Project>{13EEE875-9C2E-0AC8-9871-509CBAD60448}</Project>
       <Name>FMODUnityResonance</Name>
     </ProjectReference>
     <ProjectReference Include="FMODUnity.csproj">
-      <Project>{B774DD79-77C1-4F89-D79F-E02DF72A0264}</Project>
+      <Project>{AA8B8156-6421-0D1B-DA78-9C2BC9CB97D6}</Project>
       <Name>FMODUnity</Name>
     </ProjectReference>
     <ProjectReference Include="FMODUnityResonanceEditor.csproj">
-      <Project>{3B9F1532-C066-BFB1-1347-605A21AA2840}</Project>
+      <Project>{19564A48-8AD8-1237-DD08-654B37A1959C}</Project>
       <Name>FMODUnityResonanceEditor</Name>
     </ProjectReference>
   </ItemGroup>
