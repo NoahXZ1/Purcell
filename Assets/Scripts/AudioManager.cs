@@ -46,6 +46,7 @@ public class AudioManager : MonoBehaviour
         PlayMusicForScene(SceneManager.GetActiveScene().name);
         HfootstepsInstance = RuntimeManager.CreateInstance(humanFootsteps);
         CfootstepsInstance = RuntimeManager.CreateInstance(catFootsteps);
+        meowingInstance = RuntimeManager.CreateInstance(meowing);
         movement = player.GetComponent<PlayerMovement>();
 
     }
@@ -100,6 +101,12 @@ public class AudioManager : MonoBehaviour
     [SerializeField] float rate;
     [SerializeField] GameObject player;
 
+    //Meowing
+
+    [SerializeField] EventReference meowing;
+
+    FMOD.Studio.EventInstance meowingInstance;
+
     FMOD.Studio.EventInstance HfootstepsInstance;
     FMOD.Studio.EventInstance CfootstepsInstance;
 
@@ -108,6 +115,15 @@ public class AudioManager : MonoBehaviour
 
     void Update()
     {
+
+        //Handles Meowing SFX
+
+        if (Input.GetKeyDown(KeyCode.M))
+        {
+            meowingInstance.start();
+        }
+
+        //Handles Footstep SFX
         float horizontal = Input.GetAxis("Horizontal");
         bool isMoving = horizontal != 0;
         bool isHuman = movement.currentForm == PlayerMovement.PlayerForm.Human;
@@ -157,26 +173,8 @@ public class AudioManager : MonoBehaviour
     }
 
 
-    //Meowing
+    
 
-    //[SerializeField] EventReference meowing;
-
-    //FMOD.Studio.EventInstance meowingInstance;
-
-   // public void PlayMeowing()
-    //{
-        //if (Input.GetKeyDown(KeyCode.M))
-        //{
-            //meowingInstance.start();
-        //}
-
-        //else
-        //{
-            //meowingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        //}
-
-        
-    //}
 
     
 }
