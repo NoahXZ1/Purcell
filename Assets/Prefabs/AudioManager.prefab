@@ -71,3 +71,26 @@ MonoBehaviour:
       Data3: 1176804748
       Data4: 989384260
     Path: event:/Main Theme
+  humanFootsteps:
+    Guid:
+      Data1: 1371852399
+      Data2: 1132451529
+      Data3: -1530387319
+      Data4: -709561400
+    Path: event:/HumanWalking
+  catFootsteps:
+    Guid:
+      Data1: 277383241
+      Data2: 1109620379
+      Data3: -1781897065
+      Data4: -1100400743
+    Path: event:/CatWalking
+  rate: 0
+  player: {fileID: 0}
+  meowing:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 

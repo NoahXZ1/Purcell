@@ -159,24 +159,24 @@ public class AudioManager : MonoBehaviour
 
     //Meowing
 
-    [SerializeField] EventReference meowing;
+    //[SerializeField] EventReference meowing;
 
-    FMOD.Studio.EventInstance meowingInstance;
+    //FMOD.Studio.EventInstance meowingInstance;
 
-    public void PlayMeowing()
-    {
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            meowingInstance.start();
-        }
+   // public void PlayMeowing()
+    //{
+        //if (Input.GetKeyDown(KeyCode.M))
+        //{
+            //meowingInstance.start();
+        //}
 
-        else
-        {
-            meowingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
-        }
+        //else
+        //{
+            //meowingInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        //}
 
         
-    }
+    //}
 
     
 }
