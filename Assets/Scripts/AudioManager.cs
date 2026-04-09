@@ -7,7 +7,8 @@ public class AudioManager : MonoBehaviour
 {
     public static AudioManager Instance;
 
-    [Header("Music Events")]
+
+    [Header("Audio Events")]
     [SerializeField] private EventReference mainTheme;
 
     private EventInstance currentMusic;
@@ -36,9 +37,10 @@ public class AudioManager : MonoBehaviour
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 
-    private void Start()
+    void Start()
     {
         PlayMusicForScene(SceneManager.GetActiveScene().name);
+        footstepsInstance = RuntimeManager.CreateInstance(humanFootsteps);
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -90,20 +92,39 @@ public class AudioManager : MonoBehaviour
     [SerializeField] float rate;
     [SerializeField] GameObject player;
 
+    FMOD.Studio.EventInstance footstepsInstance;
+
     float time;
 
-    public void PlayHumanFootsteps()
+    void Update()
     {
-        RuntimeManager.PlayOneShotAttached(humanFootsteps, player);
+        float horizontal = Input.GetAxis("Horizontal");
+        bool isMoving = horizontal != 0;
+
+        if (isMoving)
+        {
+            PLAYBACK_STATE state;
+            footstepsInstance.getPlaybackState(out state);
+
+            if (state != PLAYBACK_STATE.PLAYING)
+            {
+                footstepsInstance.start();
+            }
+        }
+        else
+        {
+            footstepsInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+        }
     }
 
-    private void Update()
+    void OnDestroy()
     {
-        time += Time.deltaTime;
+        footstepsInstance.release();
     }
-
-
 }
+
+
+
 
 
 

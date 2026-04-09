@@ -170,6 +170,34 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: rate
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1884618976}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: humanFootsteps.Path
+      value: event:/HumanWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: humanFootsteps.Guid.Data1
+      value: 1371852399
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: humanFootsteps.Guid.Data2
+      value: 1132451529
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: humanFootsteps.Guid.Data3
+      value: -1530387319
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: humanFootsteps.Guid.Data4
+      value: -709561400
+      objectReference: {fileID: 0}
     - target: {fileID: 3270797644859821511, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
       propertyPath: m_Name
       value: AudioManager
@@ -334,6 +362,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d8fb51972d8fd74faa29124b9c13478, type: 3}
+--- !u!1 &1884618976 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8459177459724841691, guid: 9d8fb51972d8fd74faa29124b9c13478, type: 3}
+  m_PrefabInstance: {fileID: 1662309075}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2090417706
 PrefabInstance:
   m_ObjectHideFlags: 0
