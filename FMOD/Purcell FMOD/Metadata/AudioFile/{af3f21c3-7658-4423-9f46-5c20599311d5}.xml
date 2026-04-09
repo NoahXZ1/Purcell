@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <objects serializationModel="Studio.02.03.00">
-	<object class="AudioFile" id="{e8efde26-6ae8-4e31-940e-85dbab28e437}">
+	<object class="AudioFile" id="{af3f21c3-7658-4423-9f46-5c20599311d5}">
 		<property name="assetPath">
-			<value>PersonWalkingSFX/PersonWalking2.wav</value>
+			<value>CatWalkingSFX/CatWalking3.wav</value>
 		</property>
 		<property name="frequencyInKHz">
 			<value>44.0999985</value>
@@ -11,7 +11,7 @@
 			<value>2</value>
 		</property>
 		<property name="length">
-			<value>0.13346938775510203</value>
+			<value>0.14190476190476189</value>
 		</property>
 		<relationship name="masterAssetFolder">
 			<destination>{2417dfd0-41a5-4ead-8947-5357c6576aba}</destination>

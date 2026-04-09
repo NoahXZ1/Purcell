@@ -1,7 +1,11 @@
 using FMOD.Studio;
 using FMODUnity;
+using Unity.VisualScripting;
+using UnityEditor.Experimental.GraphView;
 using UnityEngine;
+using UnityEngine.Playables;
 using UnityEngine.SceneManagement;
+using static PlayerMovement;
 
 public class AudioManager : MonoBehaviour
 {
@@ -40,7 +44,10 @@ public class AudioManager : MonoBehaviour
     void Start()
     {
         PlayMusicForScene(SceneManager.GetActiveScene().name);
-        footstepsInstance = RuntimeManager.CreateInstance(humanFootsteps);
+        HfootstepsInstance = RuntimeManager.CreateInstance(humanFootsteps);
+        CfootstepsInstance = RuntimeManager.CreateInstance(catFootsteps);
+        movement = player.GetComponent<PlayerMovement>();
+
     }
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
@@ -89,39 +96,72 @@ public class AudioManager : MonoBehaviour
     //Human Footsteps
 
     [SerializeField] EventReference humanFootsteps;
+    [SerializeField] EventReference catFootsteps;
     [SerializeField] float rate;
     [SerializeField] GameObject player;
 
-    FMOD.Studio.EventInstance footstepsInstance;
+    FMOD.Studio.EventInstance HfootstepsInstance;
+    FMOD.Studio.EventInstance CfootstepsInstance;
 
     float time;
+    PlayerMovement movement;
 
     void Update()
     {
         float horizontal = Input.GetAxis("Horizontal");
         bool isMoving = horizontal != 0;
+        bool isHuman = movement.currentForm == PlayerMovement.PlayerForm.Human;
 
         if (isMoving)
         {
-            PLAYBACK_STATE state;
-            footstepsInstance.getPlaybackState(out state);
-
-            if (state != PLAYBACK_STATE.PLAYING)
+            if (isHuman)
             {
-                footstepsInstance.start();
+                
+                CfootstepsInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
+                PLAYBACK_STATE state;
+                HfootstepsInstance.getPlaybackState(out state);
+
+                if (state != PLAYBACK_STATE.PLAYING)
+                {
+                    HfootstepsInstance.start();
+                }
+            }
+            else // cat footsteps
+            {
+               
+                HfootstepsInstance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+
+                PLAYBACK_STATE state;
+                CfootstepsInstance.getPlaybackState(out state);
+
+                if (state != PLAYBACK_STATE.PLAYING)
+                {
+                    CfootstepsInstance.start();
+                }
             }
         }
         else
         {
-            footstepsInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            
+            HfootstepsInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+            CfootstepsInstance.stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
         }
     }
 
+
     void OnDestroy()
     {
-        footstepsInstance.release();
+        HfootstepsInstance.release();
+        CfootstepsInstance.release();
     }
 }
+
+
+
+
+
+   
 
 
 

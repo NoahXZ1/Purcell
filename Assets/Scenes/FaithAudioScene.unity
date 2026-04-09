@@ -179,8 +179,28 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1884618976}
     - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: catFootsteps.Path
+      value: event:/CatWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
       propertyPath: humanFootsteps.Path
       value: event:/HumanWalking
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: catFootsteps.Guid.Data1
+      value: 277383241
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: catFootsteps.Guid.Data2
+      value: 1109620379
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: catFootsteps.Guid.Data3
+      value: -1781897065
+      objectReference: {fileID: 0}
+    - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
+      propertyPath: catFootsteps.Guid.Data4
+      value: -1100400743
       objectReference: {fileID: 0}
     - target: {fileID: 2937698314225362086, guid: 3226d9b8e3042f44bbbaafe190604f50, type: 3}
       propertyPath: humanFootsteps.Guid.Data1
