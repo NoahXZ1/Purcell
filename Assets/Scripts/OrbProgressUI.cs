@@ -76,6 +76,18 @@ public class OrbProgressUI : MonoBehaviour
         uiRoot.SetActive(form == PlayerMovement.PlayerForm.Cat);
     }
 
+    private void LateUpdate()
+    {
+        // Counteract the parent Player's horizontal flip without changing scale size.
+        // Only flip the sign of localScale.x to match the parent, keeping magnitude intact.
+        if (playerMovement == null) return;
+        float px = playerMovement.transform.localScale.x;
+        Vector3 s = transform.localScale;
+        float targetX = Mathf.Abs(s.x) * (px < 0f ? -1f : 1f);
+        if (s.x != targetX)
+            transform.localScale = new Vector3(targetX, s.y, s.z);
+    }
+
     private void RefreshSegments(int count)
     {
         for (int i = 0; i < orbSegments.Length; i++)
