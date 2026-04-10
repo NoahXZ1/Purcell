@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 3976160696996711566}
   - component: {fileID: 4045509571119137746}
   - component: {fileID: 2296615231635634091}
-  - component: {fileID: 509027580160429952}
+  - component: {fileID: 7572334168389517251}
   m_Layer: 0
   m_Name: Spirit_Orb
   m_TagString: Untagged
@@ -121,7 +121,7 @@ CircleCollider2D:
   m_Offset: {x: 0, y: 0.1417818}
   serializedVersion: 2
   m_Radius: 3.0405388
---- !u!114 &509027580160429952
+--- !u!114 &7572334168389517251
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -130,7 +130,6 @@ MonoBehaviour:
   m_GameObject: {fileID: 5496022204334725028}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 7b1fdb2eb5bcd844d8e7718e69e5b29e, type: 3}
+  m_Script: {fileID: 11500000, guid: 11838cd003672454d92c8e03bccbd128, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemData: {fileID: 11400000, guid: 44001a8c797cfa841952c5bf85987c39, type: 2}

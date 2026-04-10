@@ -51,6 +51,7 @@ public class PlayerMovement : MonoBehaviour
 
     // ---------- Internals ----------
     Rigidbody2D rb;
+    OrbManager orbManager;
     [HideInInspector] public bool isGrounded;
     bool canJump;
     [HideInInspector] public float inputX;  //the velocity in x-aixs direction
@@ -59,11 +60,12 @@ public class PlayerMovement : MonoBehaviour
     public event Action<PlayerForm> OnFormChanged;
 
     //To control whether the form can be changed or not (prepared for later functions like spirte gate)
-    public bool canChangeForm = true; 
+    public bool canChangeForm = true;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        orbManager = GetComponent<OrbManager>();
         //Initialize all visual/collision/parameters with currentForm
         ApplyForm(currentForm);
     }
@@ -126,7 +128,18 @@ public class PlayerMovement : MonoBehaviour
     // ---------- Form logic ----------
     void ToggleForm()
     {
-        currentForm = (currentForm == PlayerForm.Human) ? PlayerForm.Cat : PlayerForm.Human;
+        if (currentForm == PlayerForm.Cat)
+        {
+            // Cat -> Human: requires 3 orbs collected
+            if (orbManager != null && !orbManager.CanTransformToHuman) return;
+            currentForm = PlayerForm.Human;
+        }
+        else
+        {
+            // Human -> Cat: always allowed; reset orb progress
+            currentForm = PlayerForm.Cat;
+            orbManager?.ResetOrbs();
+        }
         ApplyForm(currentForm);
         OnFormChanged?.Invoke(currentForm);
     }
