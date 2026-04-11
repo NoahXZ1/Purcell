@@ -5,6 +5,12 @@ using UnityEngine;
 // Replaces AutoCollectItem on orb prefabs.
 public class OrbCollectible : MonoBehaviour
 {
+    private void Start()
+    {
+        if (OrbRespawnManager.Instance != null)
+            OrbRespawnManager.Instance.Register(this);
+    }
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         var movement = other.GetComponent<PlayerMovement>()
@@ -17,10 +23,10 @@ public class OrbCollectible : MonoBehaviour
         var orbManager = movement.GetComponent<OrbManager>();
         if (orbManager == null) return;
 
-        // Already full — do nothing (don't destroy the orb either)
+        // Already full — do nothing
         if (orbManager.CanTransformToHuman) return;
 
         orbManager.CollectOrb();
-        Destroy(gameObject);
+        gameObject.SetActive(false);
     }
 }

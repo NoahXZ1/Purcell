@@ -22,10 +22,11 @@ public class OrbManager : MonoBehaviour
         OnOrbCountChanged?.Invoke(OrbCount);
     }
 
-    // Called by PlayerMovement when switching to Cat form — resets progress.
+    // Called by PlayerMovement when switching to Cat form — resets progress and respawns orbs.
     public void ResetOrbs()
     {
         OrbCount = 0;
         OnOrbCountChanged?.Invoke(OrbCount);
+        OrbRespawnManager.Instance?.RespawnAll();
     }
 }
