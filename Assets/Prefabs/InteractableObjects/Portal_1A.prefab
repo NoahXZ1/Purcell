@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 7151875248271945249}
   - component: {fileID: 5145104980959894648}
   - component: {fileID: 366881894520734406}
+  - component: {fileID: 1242009238770353491}
   m_Layer: 0
   m_Name: Portal_1A
   m_TagString: Untagged
@@ -134,3 +135,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   linkedPortal: {fileID: 0}
+--- !u!114 &1242009238770353491
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6244145425440258790}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 95080d88cb319d34685fce759036192b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: -60
