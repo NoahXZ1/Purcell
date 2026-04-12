@@ -785,7 +785,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 8
-  currentForm: 0
+  currentForm: 1
   humanMoveSpeed: 6
   humanAcceleration: 50
   humanDeceleration: 80
